@@ -37,4 +37,4 @@ jobs:
  - name: Deploy to Ubuntu Server
   run: |
     scp -r -i ${{ secrets.SSH_PRIVATE_KEY }} ./AppDemoAsp/bin/Debug/net7.0 www-data@185.252.147.48:/home/AppDemoAsp/AppDemoAsp/bin/Debug
-    ssh -i ${{ secrets.SSH_PRIVATE_KEY }} www-data@185.252.147.48 'cd /home/AppDemoAsp/AppDemoAsp/bin/Debug/net7.0 && dotnet run home/AppDemoAsp/AppDemoAsp/'
+    ssh -i ${{ secrets.SSH_PRIVATE_KEY }} www-data@185.252.147.48 'cd /home/AppDemoAsp/AppDemoAsp/bin/Debug/net7.0 && dotnet AppDemoAsp.dll'
