@@ -32,7 +32,10 @@ jobs:
         uses: webfactory/ssh-agent@v0.5.1
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          ssh-known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
+      - mame: M
+        env:
+          SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
+        run: echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
       - name: Deploy to Ubuntu Server
         run: |
           scp -r ./AppDemoAsp/bin/Debug/net7.0 www-data@185.252.147.48:/home/AppDemoAsp/AppDemoAsp/bin/Debug
