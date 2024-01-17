@@ -38,5 +38,5 @@ jobs:
         run: echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
       - name: Deploy to Ubuntu Server
         run: |
-          scp -r ./AppDemoAsp/bin/Debug/net7.0 www-data@185.252.147.48:/home/AppDemoAsp/AppDemoAsp/bin/Debug
-          ssh www-data@185.252.147.48 'cd /home/AppDemoAsp/AppDemoAsp/bin/Debug/net7.0 && dotnet AppDemoAsp.dll'
+          scp -r ./AppDemoAsp/bin/Debug/net7.0 root@185.252.147.48:/home/AppDemoAsp/AppDemoAsp/bin/Debug
+          ssh root@185.252.147.48 'systemctl restart kestrel-deploy-guide.service'
