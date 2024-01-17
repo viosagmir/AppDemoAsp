@@ -32,7 +32,7 @@ jobs:
         uses: webfactory/ssh-agent@v0.5.1
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-      - mame: M
+      - name: M
         env:
           SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
         run: echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
