@@ -19,7 +19,7 @@ jobs:
           dotnet-version: '7.0'
 
       - name: Build and Test
-        run: dotnet build --configuration Release
+        run: dotnet build --configuration Debug
 
   deploy:
     runs-on: ubuntu-latest
