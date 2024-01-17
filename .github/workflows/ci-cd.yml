@@ -21,9 +21,6 @@ jobs:
       - name: Build and Test
         run: dotnet build --configuration Debug
 
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
       - name: Setup SSH
         uses: webfactory/ssh-agent@v0.5.1
         with:
